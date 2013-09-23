@@ -1,0 +1,3 @@
+<h1>Flocks</h1>
+
+<%= @flocks %>

@@ -3,7 +3,9 @@ window.FlockBackend =
   Collections: {}
   Views: {}
   Routers: {}
-  initialize: -> alert 'Hello from Backbone!'
+  initialize: ->
+    new FlockBackend.Routers.Flocks
+    Backbone.history.start()
 
 $(document).ready ->
   FlockBackend.initialize()
