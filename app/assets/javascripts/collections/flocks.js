@@ -1,15 +1,13 @@
-// class FlockBackend.Collections.Flocks extends Backbone.Collection
+FlockBackend.Collections.Flocks = Backbone.Collection.extend({
 
-//   model: FlockBackend.Models.Flock
+  _parse_class_name: "Flocks",
+  sort_key: 'id',
+  comparator: function(item){
+    return item.get(this.sort_key)
+  },
+  sortByField: function(fieldName){
+    this.sort_key = fieldName;
+    this.sort();
+  }
 
-$(document).ready(function() {
-  Parse.initialize("InMNz5UfTlwLEN5ffUfwRqZIgEyUW1b8oXhOGbwW", "eYdLkgKXyyLTu1rIXdpUxsjUs3jso2vk541KKblM");
-  var Flock = Parse.Object.extend({
-    className: "Flocks"
-  });
-  FlockBackend.Collections.Flocks = Parse.Collection.extend({
-      model: Flock
-  });
-})
-
-
+});

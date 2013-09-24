@@ -1,0 +1,14 @@
+<h1>Flocks</h1>
+
+<form id="new_flock">
+  <input type="text" name="What" id="new_flock_What">
+  <input type="submit" value="Create new Flock">
+</form>
+
+<br>
+<%= flocks.length %> Total Flocks
+<ul>
+  <% flocks.each(function(flock){ %>
+    <li><%= flock.get("What") %> <%= flock.get('objectId') %></li>
+  <% }) %>
+</ul>
